@@ -10,14 +10,9 @@ body, html {
     background-position: center;
 }
 
-.right{
+.center{
     background-color: rgba(140, 123, 197, 0.79);
-    border: 3px solid red;
     height: 100vh;
-}
-
-.container {
-    border: 3px solid blue;
 }
 
 #weather{
@@ -25,21 +20,27 @@ body, html {
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
     font-weight: bold;
-    border: 3px solid red;
 }
 
 #temperature {
     color: #fff;
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
-    font-size: 50px;
+    font-size: 80px;
     font-kerning: normal;
     letter-spacing: 3px;
 }
 
+.icon img{
+    width: 20%;
+    height: 20%;
+}
+
 .footer{
     color: #fff;
-    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
 }
 
 .footer a{
