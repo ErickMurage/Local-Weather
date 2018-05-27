@@ -20,7 +20,15 @@ body, html {
     font-size: 35px;
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
-    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
+
+#location{
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    padding-bottom: 20px;
 }
 
 #weather{

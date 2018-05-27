@@ -11,10 +11,10 @@ $(document).ready(function () {
                 let weather = " ";
                 let temperature = " ";
                 let icon = " ";
+                let location = " ";
                     
                 //iterating through API and selecting the data I want to use
                 Object.keys(data).forEach(function (item, index, array) {
-
                     if (item == "weather") {
                         data["weather"].forEach(function (item, index, array) {
                             weather += item["main"];
@@ -45,7 +45,11 @@ $(document).ready(function () {
                 });
                 
                 //geocoding
-                
+                let city = data.name;
+                let country = data.sys.country;
+
+                location = city + " , " + country;
+
                 //functions to toggle between celsius and fahrenheit 
                 function setCelsius() {
                     return temperature + "°C";
@@ -72,7 +76,7 @@ $(document).ready(function () {
                 //appending data in html format                    
                 $("#weather").html(weather);
                 $("#temperature").html(temperature + "°C");
-                $("#location").html();
+                $("#location").html(location);
                 $("#icon").html(icon);
                 $("#toggle").html();
             });
