@@ -44,6 +44,8 @@ $(document).ready(function () {
                         
                 });
                 
+                //geocoding
+                
                 //functions to toggle between celsius and fahrenheit 
                 function setCelsius() {
                     return temperature + "°C";

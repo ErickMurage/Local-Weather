@@ -20,6 +20,7 @@ body, html {
     font-size: 35px;
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
+    margin-bottom: 30px;
 }
 
 #weather{
