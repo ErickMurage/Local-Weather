@@ -78,7 +78,6 @@ $(document).ready(function () {
                 $("#temperature").html(temperature + "°C");
                 $("#location").html(location);
                 $("#icon").html(icon);
-                $("#toggle").html();
             });
         });
     }
