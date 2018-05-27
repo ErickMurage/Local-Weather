@@ -53,6 +53,10 @@ body, html {
     color: #8C7BC5;
 }
 
+.btn-primary.btn-custom:visited{
+    border-color: white;
+}
+
 .footer{
     color: #fff;
     text-align: center;
