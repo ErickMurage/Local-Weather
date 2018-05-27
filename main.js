@@ -1,49 +1,80 @@
 $(document).ready(function () {
     
-    //$("#get-weather").on("click", function() {
-        
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (position) {
-                let latitude = position.coords.latitude;
-                let longitude = position.coords.longitude;
+    //HTML5 geolocation
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            let latitude = position.coords.latitude;
+            let longitude = position.coords.longitude;
                 
-                $.getJSON("https://fcc-weather-api.glitch.me/api/current?lat=" + latitude + "&lon=" + longitude, function (data) {
+            $.getJSON("https://fcc-weather-api.glitch.me/api/current?lat=" + latitude + "&lon=" + longitude, function (data) {
             
-                    let weather = " ";
-                    let temperature = " ";
-                    let icon = " ";
+                let weather = " ";
+                let temperature = " ";
+                let icon = " ";
                     
-                    Object.keys(data).forEach(function (item, index, array) {
+                //iterating through API and selecting the data I want to use
+                Object.keys(data).forEach(function (item, index, array) {
 
-                        if (item == "weather") {
-                            data["weather"].forEach(function (item, index, array) {
-                                weather += item["description"];
-                                icon += "<img src = '"+ item["icon"] +"' >"
-                            });     
-                        }
-                        if (item == "main") {
-                            temperature += data["main"]["temp"] + "⁰c";
-                        }
-                        
-                    });
-                
-                    console.log(temperature);
+                    if (item == "weather") {
+                        data["weather"].forEach(function (item, index, array) {
+                            weather += item["main"];
 
-                    function temperatureConverter () {
-                        
+                            //Own icons
+                            if (item["main"] == "Clouds") {
+                                icon += '<img src = imgs/cloudy.png>';
+                            } else if (item["main"] == "Drizzle") {
+                                icon += 'img src = imgs/drizzle.png';
+                            } else if (item["main"] == "Rain") {
+                                icon += 'img src = imgs/rainy-day.png';
+                            } else if (item["main"] == "Snow") {
+                                icon += 'img src = imgs/snow.png';
+                            } else if (item["main"] == "Clear") {
+                                icon += 'img src = imgs/sunny.png';
+                            } else if (item["main"] == "Thunderstorm") {
+                                icon += 'img src = imgs/storm.png';
+                            } else if (item["main"] == "Mist") {
+                                icon += 'img src = imgs/foggy.png';
+                            }
+
+                        });     
                     }
-
-
-                    $("#weather").html(weather);
-                    $("#temperature").html(temperature);
-                    $("#location").html();
-                    $("#icon").html(icon);
-                    $("#switch").html();
+                    if (item == "main") {
+                        temperature += data["main"]["temp"];
+                    }
+                        
                 });
+                
+                //functions to toggle between celsius and fahrenheit 
+                function setCelsius() {
+                    return temperature + "°C";
+                };
+
+                function setFahrenheit() {
+                    var fahrenheit = temperature * 9/5 + 32;
+                    return fahrenheit + "°F";
+                }
+                    
+                $('#toggle').on('click', function () {
+                    $('#toggle').toggleClass('celsius');
+                    $('#toggle').toggleClass('fahrenheit');
+
+                    if ($(this).hasClass('celsius')) {
+                        $('#temperature').text(setFahrenheit());
+                        return;
+                    } else {
+                        $('#temperature').text(setCelsius());
+                    }
+   
+                });
+
+                //appending data in html format                    
+                $("#weather").html(weather);
+                $("#temperature").html(temperature + "°C");
+                $("#location").html();
+                $("#icon").html(icon);
+                $("#toggle").html();
             });
-        }
-        
-        
-        
-    //});
+        });
+    }
+ 
 });
