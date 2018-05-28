@@ -23,17 +23,17 @@ $(document).ready(function () {
                             if (item["main"] == "Clouds") {
                                 icon += '<img src = imgs/cloudy.png>';
                             } else if (item["main"] == "Drizzle") {
-                                icon += 'img src = imgs/drizzle.png';
+                                icon += '<img src = imgs/drizzle.png>';
                             } else if (item["main"] == "Rain") {
-                                icon += 'img src = imgs/rainy-day.png';
+                                icon += '<img src = imgs/rainy-day.png>';
                             } else if (item["main"] == "Snow") {
-                                icon += 'img src = imgs/snow.png';
+                                icon += '<img src = imgs/snow.png>';
                             } else if (item["main"] == "Clear") {
-                                icon += 'img src = imgs/sunny.png';
+                                icon += '<img src = imgs/sunny.png>';
                             } else if (item["main"] == "Thunderstorm") {
-                                icon += 'img src = imgs/storm.png';
+                                icon += '<img src = imgs/storm.png>';
                             } else if (item["main"] == "Mist") {
-                                icon += 'img src = imgs/foggy.png';
+                                icon += '<img src = imgs/foggy.png>';
                             }
 
                         });     
