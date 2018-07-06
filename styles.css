@@ -1,87 +1,110 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*The code abobe is Erick Meyer's reset. My code starts below*/
 body, html {
     height: 100%;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    background-color: purple;
 }
-
-.bg-img{
-    background-image: url("imgs/sunny-bg.jpg");
+main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     height: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    width: 100%;
 }
-
-.center{
-    background-color: rgba(140, 123, 197, 0.79);
-    height: 100vh;
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid #FEC52D;
+    border-radius: 25px;
+    padding: 20px;
 }
-
-.title {
-    color: #fff;
-    font-size: 35px;
+.title, .location, .weather, .temperature{
+    color: #FEC52D;
+    font-size: 40px;
     font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
-    padding-bottom: 20px;
+    line-height: 60px;
 }
-
-#location{
-    color: #fff;
-    font-size: 30px;
-    font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
-    padding-bottom: 20px;
+.icon{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
-
-#weather{
-    color: #fff;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 30px;
-    font-weight: bold;
-}
-
-#temperature {
-    color: #fff;
-    font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 50px;
-    font-kerning: normal;
-    letter-spacing: 3px;
-}
-
 .icon img{
-    width: 70%;
-    height: 70%;
+    width: 60%;
+    height: 60%;
 }
-
-.btn-primary.btn-custom{
-    background-color: #8C7BC5;
-    border: none;
+.btn{
+    background-color: #FEC52D;
+    border: #FEC52D;
+    color: purple;
+    border-radius: 3px;
+    height: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
 }
-
-.btn-primary.btn-custom:hover{
-    background-color: #fff;
-    color: #8C7BC5;
+.btn:hover{
+    cursor: pointer;
+    position: relative;
+    top: -2px;
 }
-
-.btn-primary.btn-custom:visited{
-    border-color: white;
-}
-
-.footer{
+.footer p{
     color: #fff;
-    text-align: center;
-    margin-top: 30px;
+    font-size: 20px;
 }
-
-.footer a{
-    color: #fff;
-    border: 1px solid #fff;
-    border-radius: 5px;
-    padding: 5px;
+.footer p a{
     text-decoration: none;
-}
-
-.footer a:hover{
-    background-color: #fff;
-    color: #8C7BC5;
-    border: none;
+    color: #FEC52D;
 }

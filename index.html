@@ -6,41 +6,27 @@
     <title>Local Weather App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--CSS stuff-->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
     <!--scripts-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="main.js"></script>
 </head>
 <body>
-    <div class="bg-img img-fluid container-fluid">
-        <div class="row">
-            <div class="left col-md-4" id="img-view">
-                
+    <main>
+        <div class="container">
+            <div class="title">Local Weather</div>
+            <div class="location" id="location"></div>
+            <div class="weather" id="weather"></div>
+            <div class="icon" id="icon"></div>
+            <div class="temperature" id="temperature"></div>
+            <div class="switch" id="switch">
+                <button class="btn" type="button" id="toggle">toggle °F / °C</button>
             </div>
-            <div class="center d-flex col-md-4 align-contents-center" id="weather-details">
-                <div class="container align-self-center">
-                    <div class="title d-flex justify-content-center">Local Weather</div>
-                    <div class="location d-flex justify-content-center" id="location"></div>
-                    <div class="weather d-flex justify-content-center" id="weather"></div>
-                    <div class="icon d-flex justify-content-center" id="icon"></div>
-                    <div class="temperature d-flex justify-content-center celsius" id="temperature"></div>
-                    <div class="switch d-flex justify-content-center" id="switch">
-                        <button class="btn btn-primary btn-custom" type="button" id="toggle">toggle °F / °C</button>
-                    </div>
-                    <div class="footer d-flex justify-content-center">
-                        <p>by <a href="https://github.com/ErickMurage/Local-Weather">murage</a> for <a href="https://www.freecodecamp.org">FCC</a> </p>
-                    </div>
-                </div>
-                
-            </div>
-            <div class"right col-md-4">
-
+            <div class="footer">
+                <p>by <a href="https://github.com/ErickMurage/Local-Weather">murage</a> for <a href="https://www.freecodecamp.org">FCC</a> </p>
             </div>
         </div>
-    </div>
+    </main>
 </body>
 </html>
